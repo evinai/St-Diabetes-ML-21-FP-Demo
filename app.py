@@ -18,35 +18,42 @@ html_temp = """
 desc_temp = """
 			### Early Stage Diabetes Risk Predictor App
 			This dataset contains the sign and symptoms data of newly diabetic or would be diabetic patient.
-			#### Datasource
+			#### Veri Kaynağı
 				- https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.
-			#### App Content
+			#### Uygulama İçeriği
 				- EDA Section: Exploratory Data Analysis of Data
-				- ML Section: ML Predictor App
+				  - EDA-Keşfedici Veri Analizi
+				- ML Section: Machine Learning Predictor App
+				  - ML-Makine Öğretisi
 
 			"""
 
 
 
 def main():
-	# st.title("Main App")
-	stc.html(html_temp)
+	# st.title("Early Stage DM Risk Data App (DEMO)")
+	st.title("Diyabet Risk Tespit Aplikasyonu (DEMO)")
+	st.caption("Mevcut uygulama tanı amaçlı değildir. Teşhis için lütfen doktorunuza başvurunuz.")
+	# stc.html(html_temp)
+	st.sidebar.image('togaylogogri.jpg')
 
-	menu = ["Home","EDA","ML","About"]
+
+	menu = ["Ana","EDA-Keşfedici Veri Analizi","ML-Makine Öğretisi","Hakkında"]
 	choice = st.sidebar.selectbox("Menu", menu)
 
-	if choice == "Home":
-		st.subheader("Home")
+	if choice == "Ana":
+		st.subheader("Ana")
 		st.write(desc_temp)
 
-	elif choice == "EDA":
+	elif choice == "EDA-Keşfedici Veri Analizi":
 		run_eda_app()
 
-	elif choice == "ML":
+	elif choice == "ML-Makine Öğretisi":
 		run_ml_app()
 
 	else:
-		st.subheader("About")
+		st.subheader("Hakkında")
+		st.text('10-02-2021 - Togay Tunca')
 
 
 
